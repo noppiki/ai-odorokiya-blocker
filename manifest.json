@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "AI驚き屋バスター",
+  "version": "0.1.0",
+  "description": "X上の過度に煽情的・誇張的なAI投稿をスコアリングして折りたたむChrome拡張。",
+  "permissions": ["storage"],
+  "host_permissions": ["https://x.com/*", "https://twitter.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI驚き屋バスター"
+  }
+}
