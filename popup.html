@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI驚き屋バスター</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main>
+    <h1>🙄 AI驚き屋バスター</h1>
+
+    <label class="row toggle-row">
+      <span>フィルター</span>
+      <input id="enabled" type="checkbox" />
+    </label>
+
+    <label class="field">
+      <span>驚き屋しきい値 <strong id="thresholdValue">60</strong></span>
+      <input id="threshold" type="range" min="20" max="100" step="5" />
+      <small>低いほど多く折りたたみます</small>
+    </label>
+
+    <label class="field">
+      <span>検出時の動作</span>
+      <select id="mode">
+        <option value="collapse">折りたたむ</option>
+        <option value="hide">完全に非表示</option>
+      </select>
+    </label>
+
+    <div class="row">
+      <span>学習済みアカウント</span>
+      <strong id="learnedCount">0</strong>
+    </div>
+
+    <button id="resetLearning" class="danger" type="button">学習データをリセット</button>
+    <p id="status" role="status"></p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
